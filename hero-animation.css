@@ -1,0 +1,26 @@
+.hero-image{background-image:url('assets/hero-casa.png');background-position:center 12%;filter:grayscale(1) brightness(.1) saturate(.55)}
+.hero.is-animating .hero-image{animation:color-in 2.4s cubic-bezier(.2,.65,.3,1) 4.6s forwards}
+.hero-sketch{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;filter:drop-shadow(0 1px 1px rgba(24,27,24,.42))}
+.hero.is-animating .hero-sketch{opacity:.76;animation:lines-out .85s ease 7s forwards}
+.hero-content,.hero-side,.hero-index{z-index:2}
+.hero-replay{position:absolute;right:6.1%;bottom:25px;z-index:3;display:flex;align-items:center;gap:10px;padding:9px 13px;border:1px solid rgba(244,242,236,.38);border-radius:999px;background:rgba(28,30,27,.2);color:#f4f2ec;cursor:pointer;backdrop-filter:blur(5px);transition:background-color .2s ease,border-color .2s ease,opacity .2s ease}
+.hero-replay span{display:grid;place-items:center;width:19px;height:19px;border:1px solid rgba(244,242,236,.6);border-radius:50%;font-size:7px;padding-left:1px}
+.hero-replay b{font:600 7px var(--sans);letter-spacing:1.3px}
+.hero-replay:hover{background:rgba(94,100,78,.8);border-color:rgba(244,242,236,.7)}
+.hero-replay:focus-visible{outline:2px solid #c9b884;outline-offset:4px}
+.sketch-lines{fill:none;stroke:rgba(244,235,210,.92);stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.draw{stroke-dasharray:1;stroke-dashoffset:0}
+.hero.is-animating .draw{stroke-dashoffset:1;animation:draw-house 1.45s cubic-bezier(.56,.02,.2,1) forwards}
+.hero.is-animating .draw-1{animation-delay:.45s}.hero.is-animating .draw-2{animation-delay:.7s}.hero.is-animating .draw-3{animation-delay:1s}.hero.is-animating .draw-4{animation-delay:1.3s}.hero.is-animating .draw-5{animation-delay:1.6s}.hero.is-animating .draw-6{animation-delay:1.9s}.hero.is-animating .draw-7{animation-delay:2.2s}.hero.is-animating .draw-8{animation-delay:2.5s}.hero.is-animating .draw-9{animation-delay:2.8s}.hero.is-animating .draw-10{animation-delay:3.1s}.hero.is-animating .draw-13{animation-delay:3.35s}.hero.is-animating .draw-14{animation-delay:3.6s}.hero.is-animating .draw-15{animation-delay:3.85s}
+@keyframes draw-house{to{stroke-dashoffset:0}}
+@keyframes color-in{to{filter:grayscale(0) brightness(.92) saturate(.95)}}
+@keyframes lines-out{to{opacity:0}}
+.image-frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.frame-path{fill:none;stroke:rgba(239,230,204,.96);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1}
+.intro-image.is-visible .frame-path{animation:frame-in .8s cubic-bezier(.2,.7,.25,1) forwards}
+.intro-image.is-visible .frame-right{animation-delay:.12s}.intro-image.is-visible .frame-bottom{animation-delay:.24s}.intro-image.is-visible .frame-left{animation-delay:.36s}
+.intro-image.is-visible .frame-inner-top{animation-delay:.48s}.intro-image.is-visible .frame-inner-right{animation-delay:.6s}.intro-image.is-visible .frame-inner-bottom{animation-delay:.72s}.intro-image.is-visible .frame-inner-left{animation-delay:.84s}
+.intro-image.is-visible .frame-mark-tl{animation-delay:.96s}.intro-image.is-visible .frame-mark-tr{animation-delay:1.08s}.intro-image.is-visible .frame-mark-br{animation-delay:1.2s}.intro-image.is-visible .frame-mark-bl{animation-delay:1.32s}
+@keyframes frame-in{to{stroke-dashoffset:0}}
+@media(max-width:760px){.hero-image{background-position:center 12%}.hero-replay{right:6%;bottom:21px;padding:8px 10px;gap:8px}.hero-replay b{font-size:6px}}
+@media(prefers-reduced-motion:reduce){.hero.is-animating .hero-sketch{animation:none;opacity:0}.hero.is-animating .draw{animation:none;stroke-dashoffset:0}.hero.is-animating .hero-image{animation:none;filter:none}.frame-path{animation:none;stroke-dashoffset:0}.hero-replay{display:none}}
